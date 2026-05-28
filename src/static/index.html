@@ -13,31 +13,86 @@
     </header>
 
     <main>
-      <section id="activities-container">
-        <h3>Available Activities</h3>
-        <div id="activities-list">
-          <!-- Activities will be loaded here -->
-          <p>Loading activities...</p>
+      <section id="auth-container">
+        <h3>Account</h3>
+        <div id="user-status" class="status-bar hidden"></div>
+        <div id="auth-forms">
+          <div class="auth-box">
+            <h4>Login</h4>
+            <form id="login-form">
+              <div class="form-group">
+                <label for="login-username">Username</label>
+                <input id="login-username" required placeholder="Username" />
+              </div>
+              <div class="form-group">
+                <label for="login-password">Password</label>
+                <input id="login-password" type="password" required placeholder="Password" />
+              </div>
+              <button type="submit">Log In</button>
+            </form>
+          </div>
+
+          <div class="auth-box">
+            <h4>Register</h4>
+            <form id="register-form">
+              <div class="form-group">
+                <label for="register-username">Username</label>
+                <input id="register-username" required placeholder="Username" />
+              </div>
+              <div class="form-group">
+                <label for="register-email">Email</label>
+                <input id="register-email" type="email" required placeholder="student@mergington.edu" />
+              </div>
+              <div class="form-group">
+                <label for="register-password">Password</label>
+                <input id="register-password" type="password" required placeholder="Password" />
+              </div>
+              <div class="form-group">
+                <label for="register-role">Role</label>
+                <select id="register-role" required>
+                  <option value="student" selected>Student</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </div>
+              <button type="submit">Create Account</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="account-actions" class="hidden">
+          <p id="status-text"></p>
+          <button id="logout-button">Logout</button>
+        </div>
+
+        <div id="admin-actions" class="hidden">
+          <h4>Admin Activity Management</h4>
+          <form id="create-activity-form">
+            <div class="form-group">
+              <label for="activity-name">Activity Name</label>
+              <input id="activity-name" required placeholder="New Activity Name" />
+            </div>
+            <div class="form-group">
+              <label for="activity-description">Description</label>
+              <input id="activity-description" required placeholder="Activity description" />
+            </div>
+            <div class="form-group">
+              <label for="activity-schedule">Schedule</label>
+              <input id="activity-schedule" required placeholder="Mondays, 3:00 PM - 4:00 PM" />
+            </div>
+            <div class="form-group">
+              <label for="activity-max">Maximum Participants</label>
+              <input id="activity-max" type="number" min="1" required placeholder="Maximum participants" />
+            </div>
+            <button type="submit">Create Activity</button>
+          </form>
         </div>
       </section>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
-          <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
-          </div>
-          <div class="form-group">
-            <label for="activity">Select Activity:</label>
-            <select id="activity" required>
-              <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
-            </select>
-          </div>
-          <button type="submit">Sign Up</button>
-        </form>
-        <div id="message" class="hidden"></div>
+      <section id="activities-container">
+        <h3>Available Activities</h3>
+        <div id="activities-list">
+          <p>Loading activities...</p>
+        </div>
       </section>
     </main>
 
@@ -45,6 +100,7 @@
       <p>&copy; 2026 Mergington High School</p>
     </footer>
 
+    <div id="message" class="message hidden"></div>
     <script src="app.js"></script>
   </body>
 </html>
